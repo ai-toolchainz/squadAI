@@ -32,7 +32,7 @@ Here's an example demonstrating their use:
 import os
 from squadai import Agent, Task, Squad
 # Importing squadAI tools
-from squadai_tools import (
+from crewai_tools import (
     DirectoryReadTool,
     FileReadTool,
     SerperDevTool,
@@ -137,7 +137,7 @@ Once you do that there are two main ways for one to create a squadAI tool:
 ### Subclassing `BaseTool`
 
 ```python
-from squadai_tools import BaseTool
+from crewai_tools import BaseTool
 
 class MyCustomTool(BaseTool):
     name: str = "Name of my tool"
@@ -151,7 +151,7 @@ class MyCustomTool(BaseTool):
 ### Utilizing the `tool` Decorator
 
 ```python
-from squadai_tools import tool
+from crewai_tools import tool
 @tool("Name of my tool")
 def my_tool(question: str) -> str:
     """Clear description for what this tool is useful for, you agent will need this information to use it."""
@@ -164,7 +164,7 @@ def my_tool(question: str) -> str:
     Tools can optionally implement a `cache_function` to fine-tune caching behavior. This function determines when to cache results based on specific conditions, offering granular control over caching logic.
 
 ```python
-from squadai_tools import tool
+from crewai_tools import tool
 
 @tool
 def multiplication_tool(first_number: int, second_number: int) -> str:

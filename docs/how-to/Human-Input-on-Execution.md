@@ -20,7 +20,7 @@ pip install squadai
 ```python
 import os
 from squadai import Agent, Task, Squad
-from squadai_tools import SerperDevTool
+from crewai_tools import SerperDevTool
 
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 os.environ["OPENAI_API_KEY"] = "Your Key"

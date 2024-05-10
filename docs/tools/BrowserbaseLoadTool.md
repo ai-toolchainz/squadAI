@@ -18,7 +18,7 @@ pip install browserbase 'squadai[tools]'
 Utilize the BrowserbaseLoadTool as follows to allow your agent to load websites:
 
 ```python
-from squadai_tools import BrowserbaseLoadTool
+from crewai_tools import BrowserbaseLoadTool
 
 tool = BrowserbaseLoadTool()
 ```

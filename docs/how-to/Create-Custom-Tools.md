@@ -18,7 +18,7 @@ pip install 'squadai[tools]'
 To create a personalized tool, inherit from `BaseTool` and define the necessary attributes and the `_run` method.
 
 ```python
-from squadai_tools import BaseTool
+from crewai_tools import BaseTool
 
 class MyCustomTool(BaseTool):
     name: str = "Name of my tool"
@@ -34,7 +34,7 @@ class MyCustomTool(BaseTool):
 Alternatively, use the `tool` decorator for a direct approach to create tools. This requires specifying attributes and the tool's logic within a function.
 
 ```python
-from squadai_tools import tool
+from crewai_tools import tool
 
 @tool("Tool Name")
 def my_simple_tool(question: str) -> str:

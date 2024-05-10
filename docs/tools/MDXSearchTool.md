@@ -4,10 +4,10 @@
     The MDXSearchTool is in continuous development. Features may be added or removed, and functionality could change unpredictably as we refine the tool.
 
 ## Description
-The MDX Search Tool is a component of the `squadai_tools` package aimed at facilitating advanced market data extraction. This tool is invaluable for researchers and analysts seeking quick access to market insights, especially within the AI sector. It simplifies the task of acquiring, interpreting, and organizing market data by interfacing with various data sources.
+The MDX Search Tool is a component of the `crewai_tools` package aimed at facilitating advanced market data extraction. This tool is invaluable for researchers and analysts seeking quick access to market insights, especially within the AI sector. It simplifies the task of acquiring, interpreting, and organizing market data by interfacing with various data sources.
 
 ## Installation
-Before using the MDX Search Tool, ensure the `squadai_tools` package is installed. If it is not, you can install it with the following command:
+Before using the MDX Search Tool, ensure the `crewai_tools` package is installed. If it is not, you can install it with the following command:
 
 ```shell
 pip install 'squadai[tools]'
@@ -17,7 +17,7 @@ pip install 'squadai[tools]'
 To use the MDX Search Tool, you must first set up the necessary environment variables. Then, integrate the tool into your squadAI project to begin your market research. Below is a basic example of how to do this:
 
 ```python
-from squadai_tools import MDXSearchTool
+from crewai_tools import MDXSearchTool
 
 # Initialize the tool to search any MDX content it learns about during execution
 tool = MDXSearchTool()

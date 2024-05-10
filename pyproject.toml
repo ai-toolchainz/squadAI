@@ -2,16 +2,16 @@
 name = "squadai"
 version = "0.30.0rc7"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks."
-authors = ["Joao Moura <joao@squadai.com>"]
+authors = ["inf17101", "lingnoi"]
 readme = "README.md"
 packages = [
     { include = "squadai", from = "src" },
 ]
 
 [tool.poetry.urls]
-Homepage = "https://squadai.com"
-Documentation = "https://github.com/joaomdmoura/SquadAI/wiki/Index"
-Repository = "https://github.com/joaomdmoura/squadai"
+Homepage = ""
+Documentation = "https://github.com/ai-toolchainz/SquadAI/wiki/Index"
+Repository = "https://github.com/ai-toolchainz/squadai"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"

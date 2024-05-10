@@ -39,7 +39,7 @@ pip install 'squadai[tools]'
 ```python
 import os
 from squadai import Agent
-from squadai_tools import SerperDevTool
+from crewai_tools import SerperDevTool
 
 # Set API keys for tool initialization
 os.environ["OPENAI_API_KEY"] = "Your Key"

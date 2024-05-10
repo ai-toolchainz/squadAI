@@ -1,4 +1,4 @@
-from squadai_tools import BaseTool
+from crewai_tools import BaseTool
 
 
 class MyCustomTool(BaseTool):

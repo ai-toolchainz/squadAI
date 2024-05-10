@@ -7,7 +7,7 @@
 The XMLSearchTool is a cutting-edge RAG tool engineered for conducting semantic searches within XML files. Ideal for users needing to parse and extract information from XML content efficiently, this tool supports inputting a search query and an optional XML file path. By specifying an XML path, users can target their search more precisely to the content of that file, thereby obtaining more relevant search outcomes.
 
 ## Installation
-To start using the XMLSearchTool, you must first install the squadai_tools package. This can be easily done with the following command:
+To start using the XMLSearchTool, you must first install the crewai_tools package. This can be easily done with the following command:
 
 ```shell
 pip install 'squadai[tools]'
@@ -17,7 +17,7 @@ pip install 'squadai[tools]'
 Here are two examples demonstrating how to use the XMLSearchTool. The first example shows searching within a specific XML file, while the second example illustrates initiating a search without predefining an XML path, providing flexibility in search scope.
 
 ```python
-from squadai_tools import XMLSearchTool
+from crewai_tools import XMLSearchTool
 
 # Allow agents to search within any XML file's content as it learns about their paths during execution
 tool = XMLSearchTool()

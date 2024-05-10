@@ -5,7 +5,7 @@ from squadai.project import SquadBase, agent, squad, task
 # from {{folder_name}}.tools.custom_tool import MyCustomTool
 
 # Check our tools documentations for more information on how to use them
-# from squadai_tools import SerperDevTool
+# from crewai_tools import SerperDevTool
 
 @SquadBase
 class {{squad_name}}Squad():

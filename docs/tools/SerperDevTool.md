@@ -16,7 +16,7 @@ pip install 'squadai[tools]'
 The following example demonstrates how to initialize the tool and execute a search with a given query:
 
 ```python
-from squadai_tools import SerperDevTool
+from crewai_tools import SerperDevTool
 
 # Initialize the tool for internet searching capabilities
 tool = SerperDevTool()

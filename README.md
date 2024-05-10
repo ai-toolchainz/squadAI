@@ -1,6 +1,6 @@
 <div align="center">
 
-![Logo of squadAI, two people rowing on a boat](./docs/squadai_logo.png)
+![Logo of squadAI, two people rowing on a boat](./docs/squadai_logo.svg)
 
 # **squadAI**
 
@@ -59,7 +59,7 @@ pip install 'squadai[tools]'
 ```python
 import os
 from squadai import Agent, Task, Squad, Process
-from squadai_tools import SerperDevTool
+from crewai_tools import SerperDevTool
 
 os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key

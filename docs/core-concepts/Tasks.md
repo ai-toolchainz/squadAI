@@ -54,7 +54,7 @@ os.environ["OPENAI_API_KEY"] = "Your Key"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
 from squadai import Agent, Task, Squad
-from squadai_tools import SerperDevTool
+from crewai_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',

@@ -366,10 +366,10 @@ class Agent(BaseModel):
 
     def _parse_tools(self, tools: List[Any]) -> List[LangChainTool]:
         """Parse tools to be used for the task."""
-        # tentatively try to import from squadai_tools import BaseTool as SquadAITool
+        # tentatively try to import from crewai_tools import BaseTool as SquadAITool
         tools_list = []
         try:
-            from squadai_tools import BaseTool as SquadAITool
+            from crewai_tools import BaseTool as SquadAITool
 
             for tool in tools:
                 if isinstance(tool, SquadAITool):

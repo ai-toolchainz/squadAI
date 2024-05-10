@@ -8,19 +8,19 @@
 The DirectoryReadTool is a powerful utility designed to provide a comprehensive listing of directory contents. It can recursively navigate through the specified directory, offering users a detailed enumeration of all files, including those within subdirectories. This tool is crucial for tasks that require a thorough inventory of directory structures or for validating the organization of files within directories.
 
 ## Installation
-To utilize the DirectoryReadTool in your project, install the `squadai_tools` package. If this package is not yet part of your environment, you can install it using pip with the command below:
+To utilize the DirectoryReadTool in your project, install the `crewai_tools` package. If this package is not yet part of your environment, you can install it using pip with the command below:
 
 ```shell
 pip install 'squadai[tools]'
 ```
 
-This command installs the latest version of the `squadai_tools` package, granting access to the DirectoryReadTool among other utilities.
+This command installs the latest version of the `crewai_tools` package, granting access to the DirectoryReadTool among other utilities.
 
 ## Example
 Employing the DirectoryReadTool is straightforward. The following code snippet demonstrates how to set it up and use the tool to list the contents of a specified directory:
 
 ```python
-from squadai_tools import DirectoryReadTool
+from crewai_tools import DirectoryReadTool
 
 # Initialize the tool so the agent can read any directory's content it learns about during execution
 tool = DirectoryReadTool()

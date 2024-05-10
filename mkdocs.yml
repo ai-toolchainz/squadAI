@@ -2,10 +2,10 @@ site_name: squadAI
 site_author: squadAI, Inc
 site_description: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks.
 repo_name: squadAI
-repo_url: https://github.com/joaomdmoura/squadai/
-site_url: https://squadai.com
+repo_url: https://github.com/ai-toolchainz/squadai/
+site_url: -
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2024 squadAI, Inc
+copyright: Copyright &copy; 2024 ai-toolchainz
 
 markdown_extensions:
   - abbr
@@ -180,7 +180,5 @@ extra:
     provider: google
     property: G-N3Q505TMQ6
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/joaomdmoura
     - icon: fontawesome/brands/github
-      link: https://github.com/joaomdmoura/squadAI
+      link: https://github.com/ai-toolchainz/squadAI

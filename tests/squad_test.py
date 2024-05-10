@@ -770,7 +770,7 @@ def test_task_callback_on_squad():
 def test_tools_with_custom_caching():
     from unittest.mock import patch
 
-    from squadai_tools import tool
+    from crewai_tools import tool
 
     @tool
     def multiplcation_tool(first_number: int, second_number: int) -> str:
@@ -966,7 +966,7 @@ def test_manager_agent_in_agents_raises_exception():
 
 
 def test_manager_agent_with_tools_raises_exception():
-    from squadai_tools import tool
+    from crewai_tools import tool
 
     @tool
     def testing_tool(first_number: int, second_number: int) -> int:

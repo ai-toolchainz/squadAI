@@ -418,7 +418,7 @@ def test_increment_delegations_for_sequential_process():
 
 @pytest.mark.vcr(filter_headers=["authorization"])
 def test_increment_tool_errors():
-    from squadai_tools import tool
+    from crewai_tools import tool
     from langchain_openai import ChatOpenAI
 
     @tool

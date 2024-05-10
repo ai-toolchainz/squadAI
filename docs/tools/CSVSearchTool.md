@@ -9,7 +9,7 @@ This tool is used to perform a RAG (Retrieval-Augmented Generation) search withi
 
 ## Installation
 
-Install the squadai_tools package
+Install the crewai_tools package
 
 ```shell
 pip install 'squadai[tools]'
@@ -18,7 +18,7 @@ pip install 'squadai[tools]'
 ## Example
 
 ```python
-from squadai_tools import CSVSearchTool
+from crewai_tools import CSVSearchTool
 
 # Initialize the tool with a specific CSV file. This setup allows the agent to only search the given CSV file.
 tool = CSVSearchTool(csv='path/to/your/csvfile.csv')

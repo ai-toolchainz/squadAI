@@ -7,7 +7,7 @@
 This tool is used to perform a RAG (Retrieval-Augmented Generation) search within the content of a text file. It allows for semantic searching of a query within a specified text file's content, making it an invaluable resource for quickly extracting information or finding specific sections of text based on the query provided.
 
 ## Installation
-To use the TXTSearchTool, you first need to install the squadai_tools package. This can be done using pip, a package manager for Python. Open your terminal or command prompt and enter the following command:
+To use the TXTSearchTool, you first need to install the crewai_tools package. This can be done using pip, a package manager for Python. Open your terminal or command prompt and enter the following command:
 
 ```shell
 pip install 'squadai[tools]'
@@ -19,7 +19,7 @@ This command will download and install the TXTSearchTool along with any necessar
 The following example demonstrates how to use the TXTSearchTool to search within a text file. This example shows both the initialization of the tool with a specific text file and the subsequent search within that file's content.
 
 ```python
-from squadai_tools import TXTSearchTool
+from crewai_tools import TXTSearchTool
 
 # Initialize the tool to search within any text file's content the agent learns about during its execution
 tool = TXTSearchTool()
