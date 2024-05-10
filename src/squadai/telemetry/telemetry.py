@@ -12,6 +12,15 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.trace import Status, StatusCode
 
+import re
+def is_valid_url(string):
+    # Regular expression for URL validation (basic)
+    url_regex = r'^(https?:\/\/)?'  # Optional protocol followed by colon and two slashes
+    domain_name_regex = r'\w+(\.\w+)+$'  # Domain name with possible subdomains
+    string_regex = f"{url_regex}{domain_name_regex}"
+    
+    return re.match(string_regex, string) is not None
+
 
 class Telemetry:
     """A class to handle anonymous telemetry for the squadai package.
@@ -42,21 +51,22 @@ class Telemetry:
         self.ready = False
         self.trace_set = False
         try:
-            telemetry_endpoint = "https://telemetry.crewai.com:4319"
-            self.resource = Resource(
-                attributes={SERVICE_NAME: "squadAI-telemetry"},
-            )
-            self.provider = TracerProvider(resource=self.resource)
-
-            processor = BatchSpanProcessor(
-                OTLPSpanExporter(
-                    endpoint=f"{telemetry_endpoint}/v1/traces",
-                    timeout=30,
+            telemetry_endpoint = self._get_telemetry_endpoint()
+            if is_valid_url(telemetry_endpoint):
+                self.resource = Resource(
+                    attributes={SERVICE_NAME: "squadAI-telemetry"},
                 )
-            )
+                self.provider = TracerProvider(resource=self.resource)
 
-            self.provider.add_span_processor(processor)
-            self.ready = True
+                processor = BatchSpanProcessor(
+                    OTLPSpanExporter(
+                        endpoint=f"{telemetry_endpoint}/v1/traces",
+                        timeout=30,
+                    )
+                )
+
+                self.provider.add_span_processor(processor)
+                self.ready = True
         except BaseException as e:
             if isinstance(
                 e,
@@ -315,3 +325,6 @@ class Telemetry:
             safe_attributes["class"] = llm.__class__.__name__
             return safe_attributes
         return {}
+    
+    def _get_telemetry_endpoint():
+        return os.environ["SQUADAI_TELEMETRY_ENDPOINT"]
