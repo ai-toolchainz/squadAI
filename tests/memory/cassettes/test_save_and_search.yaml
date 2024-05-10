@@ -179,7 +179,7 @@ interactions:
       openai-model:
       - text-embedding-ada-002
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '15'
       openai-version:
@@ -378,7 +378,7 @@ interactions:
       openai-model:
       - text-embedding-ada-002
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '22'
       openai-version:

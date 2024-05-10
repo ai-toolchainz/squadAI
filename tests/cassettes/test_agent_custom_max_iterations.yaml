@@ -550,7 +550,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '246'
       openai-version:

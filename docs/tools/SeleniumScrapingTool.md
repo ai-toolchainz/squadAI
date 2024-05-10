@@ -7,17 +7,17 @@
 The SeleniumScrapingTool is crafted for high-efficiency web scraping tasks. It allows for precise extraction of content from web pages by using CSS selectors to target specific elements. Its design caters to a wide range of scraping needs, offering flexibility to work with any provided website URL.
 
 ## Installation
-To get started with the SeleniumScrapingTool, install the crewai_tools package using pip:
+To get started with the SeleniumScrapingTool, install the squadai_tools package using pip:
 
 ```
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Usage Examples
 Below are some scenarios where the SeleniumScrapingTool can be utilized:
 
 ```python
-from crewai_tools import SeleniumScrapingTool
+from squadai_tools import SeleniumScrapingTool
 
 # Example 1: Initialize the tool without any parameters to scrape the current page it navigates to
 tool = SeleniumScrapingTool()

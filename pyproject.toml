@@ -1,17 +1,17 @@
 [tool.poetry]
-name = "crewai"
+name = "squadai"
 version = "0.30.0rc7"
-description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
-authors = ["Joao Moura <joao@crewai.com>"]
+description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks."
+authors = ["Joao Moura <joao@squadai.com>"]
 readme = "README.md"
 packages = [
-    { include = "crewai", from = "src" },
+    { include = "squadai", from = "src" },
 ]
 
 [tool.poetry.urls]
-Homepage = "https://crewai.com"
-Documentation = "https://github.com/joaomdmoura/CrewAI/wiki/Index"
-Repository = "https://github.com/joaomdmoura/crewai"
+Homepage = "https://squadai.com"
+Documentation = "https://github.com/joaomdmoura/SquadAI/wiki/Index"
+Repository = "https://github.com/joaomdmoura/squadai"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"
@@ -23,14 +23,14 @@ opentelemetry-sdk = "^1.22.0"
 opentelemetry-exporter-otlp-proto-http = "^1.22.0"
 instructor = "^0.5.2"
 regex = "^2023.12.25"
-crewai-tools = { version = "^0.2.5", optional = true }
+squadai-tools = { version = "^0.2.5", optional = true }
 click = "^8.1.7"
 python-dotenv = "^1.0.0"
 embedchain = "^0.1.98"
 appdirs = "^1.4.4"
 
 [tool.poetry.extras]
-tools = ["crewai-tools"]
+tools = ["squadai-tools"]
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
@@ -44,11 +44,11 @@ mkdocs-material = {extras = ["imaging"], version = "^9.5.7"}
 mkdocs-material-extensions = "^1.3.1"
 pillow = "^10.2.0"
 cairosvg = "^2.7.1"
-crewai-tools = "^0.2.5"
+squadai-tools = "^0.2.5"
 
 [tool.isort]
 profile = "black"
-known_first_party = ["crewai"]
+known_first_party = ["squadai"]
 
 
 [tool.poetry.group.test.dependencies]
@@ -57,7 +57,7 @@ pytest-vcr = "^1.0.2"
 python-dotenv = "1.0.0"
 
 [tool.poetry.scripts]
-crewai = "crewai.cli.cli:crewai"
+squadai = "squadai.cli.cli:squadai"
 
 [build-system]
 requires = ["poetry-core"]

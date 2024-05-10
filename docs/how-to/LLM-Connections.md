@@ -1,23 +1,23 @@
 ---
-title: Connect CrewAI to LLMs
-description: Comprehensive guide on integrating CrewAI with various Large Language Models (LLMs), including detailed class attributes and methods.
+title: Connect SquadAI to LLMs
+description: Comprehensive guide on integrating SquadAI with various Large Language Models (LLMs), including detailed class attributes and methods.
 ---
 
-## Connect CrewAI to LLMs
+## Connect SquadAI to LLMs
 !!! note "Default LLM"
-    By default, CrewAI uses OpenAI's GPT-4 model for language processing. You can configure your agents to use a different model or API. This guide shows how to connect your agents to various LLMs through environment variables and direct instantiation.
+    By default, SquadAI uses OpenAI's GPT-4 model for language processing. You can configure your agents to use a different model or API. This guide shows how to connect your agents to various LLMs through environment variables and direct instantiation.
 
-CrewAI offers flexibility in connecting to various LLMs, including local models via [Ollama](https://ollama.ai) and different APIs like Azure. It's compatible with all [LangChain LLM](https://python.langchain.com/docs/integrations/llms/) components, enabling diverse integrations for tailored AI solutions.
+SquadAI offers flexibility in connecting to various LLMs, including local models via [Ollama](https://ollama.ai) and different APIs like Azure. It's compatible with all [LangChain LLM](https://python.langchain.com/docs/integrations/llms/) components, enabling diverse integrations for tailored AI solutions.
 
-## CrewAI Agent Overview
-The `Agent` class is the cornerstone for implementing AI solutions in CrewAI. Here's an updated overview reflecting the latest codebase changes:
+## SquadAI Agent Overview
+The `Agent` class is the cornerstone for implementing AI solutions in SquadAI. Here's an updated overview reflecting the latest codebase changes:
 
 - **Attributes**:
     - `role`: Defines the agent's role within the solution.
     - `goal`: Specifies the agent's objective.
     - `backstory`: Provides a background story to the agent.
     - `llm`: Indicates the Large Language Model the agent uses. By default, it uses the GPT-4 model defined in the environment variable "OPENAI_MODEL_NAME".
-    - `function_calling_llm` *Optional*: Will turn the ReAct crewAI agent into a function calling agent.
+    - `function_calling_llm` *Optional*: Will turn the ReAct squadAI agent into a function calling agent.
     - `max_iter`: Maximum number of iterations for an agent to execute a task, default is 15.
     - `memory`: Enables the agent to retain information during and a across executions. Default is `False`.
     - `max_rpm`: Maximum number of requests per minute the agent's execution should respect. Optional.
@@ -42,7 +42,7 @@ example_agent = Agent(
 ```
 
 ## Ollama Integration
-Ollama is preferred for local LLM integration, offering customization and privacy benefits. To integrate Ollama with CrewAI, set the appropriate environment variables as shown below. 
+Ollama is preferred for local LLM integration, offering customization and privacy benefits. To integrate Ollama with SquadAI, set the appropriate environment variables as shown below. 
 
 ### Setting Up Ollama
 - **Environment Variables Configuration**: To integrate Ollama, set the following environment variables:
@@ -76,7 +76,7 @@ SYSTEM """"""
 
 # variables
 model_name="llama2"
-custom_model_name="crewai-llama2"
+custom_model_name="squadai-llama2"
 
 #get the base model
 ollama pull $model_name
@@ -85,15 +85,15 @@ ollama pull $model_name
 ollama create $custom_model_name -f ./Llama2ModelFile
 ```
 5. Go into the directory where the script file and ModelFile is located and run the script.   
-6. Enjoy your free Llama2 model that powered up by excellent agents from crewai.   
+6. Enjoy your free Llama2 model that powered up by excellent agents from squadai.   
 ```
-from crewai import Agent, Task, Crew
+from squadai import Agent, Task, Squad
 from langchain_openai import ChatOpenAI
 import os
 os.environ["OPENAI_API_KEY"] = "NA"
 
 llm = ChatOpenAI(
-    model = "crewai-llama2",
+    model = "squadai-llama2",
     base_url = "http://localhost:11434/v1")
 
 general_agent = Agent(role = "Math Professor",
@@ -105,13 +105,13 @@ general_agent = Agent(role = "Math Professor",
 task = Task (description="""what is 3 + 5""",
              agent = general_agent)
 
-crew = Crew(
+squad = Squad(
             agents=[general_agent],
             tasks=[task],
             verbose=2
         )
 
-result = crew.kickoff()
+result = squad.kickoff()
 
 print(result)
 ```
@@ -215,7 +215,7 @@ AZURE_OPENAI_KEY=""
 ### Example Agent with Azure LLM
 ```python
 from dotenv import load_dotenv
-from crewai import Agent
+from squadai import Agent
 from langchain_openai import AzureChatOpenAI
 
 load_dotenv()
@@ -234,4 +234,4 @@ azure_agent = Agent(
 ```
 
 ## Conclusion
-Integrating CrewAI with different LLMs expands the framework's versatility, allowing for customized, efficient AI solutions across various domains and platforms.
+Integrating SquadAI with different LLMs expands the framework's versatility, allowing for customized, efficient AI solutions across various domains and platforms.

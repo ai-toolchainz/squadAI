@@ -1,25 +1,25 @@
 <div align="center">
 
-![Logo of crewAI, two people rowing on a boat](./docs/crewai_logo.png)
+![Logo of squadAI, two people rowing on a boat](./docs/squadai_logo.png)
 
-# **crewAI**
+# **squadAI**
 
-🤖 **crewAI**: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.
+🤖 **squadAI**: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks.
 
 <h3>
 
-[Homepage](https://www.crewai.io/) | [Documentation](https://docs.crewai.com/) | [Chat with Docs](https://chatg.pt/DWjSBZn) | [Examples](https://github.com/joaomdmoura/crewai-examples) | [Discord](https://discord.com/invite/X4JWnZnxPb)
+[Homepage](https://www.squadai.io/) | [Documentation](https://docs.squadai.com/) | [Chat with Docs](https://chatg.pt/DWjSBZn) | [Examples](https://github.com/joaomdmoura/squadai-examples) | [Discord](https://discord.com/invite/X4JWnZnxPb)
 
 </h3>
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/joaomdmoura/crewAI)](https://github.com/joaomdmoura/crewAI)
+[![GitHub Repo stars](https://img.shields.io/github/stars/joaomdmoura/squadAI)](https://github.com/joaomdmoura/squadAI)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
 ## Table of contents
 
-- [Why CrewAI?](#why-crewai)
+- [Why SquadAI?](#why-squadai)
 - [Getting Started](#getting-started)
 - [Key Features](#key-features)
 - [Examples](#examples)
@@ -27,44 +27,44 @@
   - [Write Job Descriptions](#write-job-descriptions)
   - [Trip Planner](#trip-planner)
   - [Stock Analysis](#stock-analysis)
-- [Connecting Your Crew to a Model](#connecting-your-crew-to-a-model)
-- [How CrewAI Compares](#how-crewai-compares)
+- [Connecting Your Squad to a Model](#connecting-your-squad-to-a-model)
+- [How SquadAI Compares](#how-squadai-compares)
 - [Contribution](#contribution)
 - [Telemetry](#telemetry)
 - [License](#license)
 
-## Why CrewAI?
+## Why SquadAI?
 
 The power of AI collaboration has too much to offer.
-CrewAI is designed to enable AI agents to assume roles, share goals, and operate in a cohesive unit - much like a well-oiled crew. Whether you're building a smart assistant platform, an automated customer service ensemble, or a multi-agent research team, CrewAI provides the backbone for sophisticated multi-agent interactions.
+SquadAI is designed to enable AI agents to assume roles, share goals, and operate in a cohesive unit - much like a well-oiled squad. Whether you're building a smart assistant platform, an automated customer service ensemble, or a multi-agent research team, SquadAI provides the backbone for sophisticated multi-agent interactions.
 
 ## Getting Started
 
-To get started with CrewAI, follow these simple steps:
+To get started with SquadAI, follow these simple steps:
 
 ### 1. Installation
 
 ```shell
-pip install crewai
+pip install squadai
 ```
 
-If you want to install the 'crewai' package along with its optional features that include additional tools for agents, you can do so by using the following command: pip install 'crewai[tools]'. This command installs the basic package and also adds extra components which require more dependencies to function."
+If you want to install the 'squadai' package along with its optional features that include additional tools for agents, you can do so by using the following command: pip install 'squadai[tools]'. This command installs the basic package and also adds extra components which require more dependencies to function."
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
-### 2. Setting Up Your Crew
+### 2. Setting Up Your Squad
 
 ```python
 import os
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SerperDevTool
+from squadai import Agent, Task, Squad, Process
+from squadai_tools import SerperDevTool
 
 os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
-# You can choose to use a local model through Ollama for example. See https://docs.crewai.com/how-to/LLM-Connections/ for more information.
+# You can choose to use a local model through Ollama for example. See https://docs.squadai.com/how-to/LLM-Connections/ for more information.
 
 # os.environ["OPENAI_API_BASE"] = 'http://localhost:11434/v1'
 # os.environ["OPENAI_MODEL_NAME"] ='openhermes'  # Adjust based on available model
@@ -84,7 +84,7 @@ researcher = Agent(
   tools=[search_tool]
   # You can pass an optional llm attribute specifying what model you wanna use.
   # It can be a local model through Ollama / LM Studio or a remote
-  # model like OpenAI, Mistral, Antrophic or others (https://docs.crewai.com/how-to/LLM-Connections/)
+  # model like OpenAI, Mistral, Antrophic or others (https://docs.squadai.com/how-to/LLM-Connections/)
   #
   # import os
   # os.environ['OPENAI_MODEL_NAME'] = 'gpt-3.5-turbo'
@@ -120,21 +120,21 @@ task2 = Task(
   agent=writer
 )
 
-# Instantiate your crew with a sequential process
-crew = Crew(
+# Instantiate your squad with a sequential process
+squad = Squad(
   agents=[researcher, writer],
   tasks=[task1, task2],
   verbose=2, # You can set it to 1 or 2 to different logging levels
 )
 
-# Get your crew to work!
-result = crew.kickoff()
+# Get your squad to work!
+result = squad.kickoff()
 
 print("######################")
 print(result)
 ```
 
-In addition to the sequential process, you can use the hierarchical process, which automatically assigns a manager to the defined crew to properly coordinate the planning and execution of tasks through delegation and validation of results. [See more about the processes here](https://docs.crewai.com/core-concepts/Processes/).
+In addition to the sequential process, you can use the hierarchical process, which automatically assigns a manager to the defined squad to properly coordinate the planning and execution of tasks through delegation and validation of results. [See more about the processes here](https://docs.squadai.com/core-concepts/Processes/).
 
 ## Key Features
 
@@ -144,58 +144,58 @@ In addition to the sequential process, you can use the hierarchical process, whi
 - **Processes Driven**: Currently only supports `sequential` task execution and `hierarchical` processes, but more complex processes like consensual and autonomous are being worked on.
 - **Save output as file**: Save the output of individual tasks as a file, so you can use it later.
 - **Parse output as Pydantic or Json**: Parse the output of individual tasks as a Pydantic model or as a Json if you want to.
-- **Works with Open Source Models**: Run your crew using Open AI or open source models refer to the [Connect crewAI to LLMs](https://docs.crewai.com/how-to/LLM-Connections/) page for details on configuring your agents' connections to models, even ones running locally!
+- **Works with Open Source Models**: Run your squad using Open AI or open source models refer to the [Connect squadAI to LLMs](https://docs.squadai.com/how-to/LLM-Connections/) page for details on configuring your agents' connections to models, even ones running locally!
 
-![CrewAI Mind Map](./docs/crewAI-mindmap.png "CrewAI Mind Map")
+![SquadAI Mind Map](./docs/squadAI-mindmap.png "SquadAI Mind Map")
 
 ## Examples
 
-You can test different real life examples of AI crews in the [crewAI-examples repo](https://github.com/joaomdmoura/crewAI-examples?tab=readme-ov-file):
+You can test different real life examples of AI squads in the [squadAI-examples repo](https://github.com/joaomdmoura/squadAI-examples?tab=readme-ov-file):
 
-- [Landing Page Generator](https://github.com/joaomdmoura/crewAI-examples/tree/main/landing_page_generator)
-- [Having Human input on the execution](https://docs.crewai.com/how-to/Human-Input-on-Execution)
-- [Trip Planner](https://github.com/joaomdmoura/crewAI-examples/tree/main/trip_planner)
-- [Stock Analysis](https://github.com/joaomdmoura/crewAI-examples/tree/main/stock_analysis)
+- [Landing Page Generator](https://github.com/joaomdmoura/squadAI-examples/tree/main/landing_page_generator)
+- [Having Human input on the execution](https://docs.squadai.com/how-to/Human-Input-on-Execution)
+- [Trip Planner](https://github.com/joaomdmoura/squadAI-examples/tree/main/trip_planner)
+- [Stock Analysis](https://github.com/joaomdmoura/squadAI-examples/tree/main/stock_analysis)
 
 ### Quick Tutorial
 
-[![CrewAI Tutorial](https://img.youtube.com/vi/tnejrr-0a94/maxresdefault.jpg)](https://www.youtube.com/watch?v=tnejrr-0a94 "CrewAI Tutorial")
+[![SquadAI Tutorial](https://img.youtube.com/vi/tnejrr-0a94/maxresdefault.jpg)](https://www.youtube.com/watch?v=tnejrr-0a94 "SquadAI Tutorial")
 
 ### Write Job Descriptions
 
-[Check out code for this example](https://github.com/joaomdmoura/crewAI-examples/tree/main/job-posting) or watch a video below:
+[Check out code for this example](https://github.com/joaomdmoura/squadAI-examples/tree/main/job-posting) or watch a video below:
 
 [![Jobs postings](https://img.youtube.com/vi/u98wEMz-9to/maxresdefault.jpg)](https://www.youtube.com/watch?v=u98wEMz-9to "Jobs postings")
 
 ### Trip Planner
 
-[Check out code for this example](https://github.com/joaomdmoura/crewAI-examples/tree/main/trip_planner) or watch a video below:
+[Check out code for this example](https://github.com/joaomdmoura/squadAI-examples/tree/main/trip_planner) or watch a video below:
 
 [![Trip Planner](https://img.youtube.com/vi/xis7rWp-hjs/maxresdefault.jpg)](https://www.youtube.com/watch?v=xis7rWp-hjs "Trip Planner")
 
 ### Stock Analysis
 
-[Check out code for this example](https://github.com/joaomdmoura/crewAI-examples/tree/main/stock_analysis) or watch a video below:
+[Check out code for this example](https://github.com/joaomdmoura/squadAI-examples/tree/main/stock_analysis) or watch a video below:
 
 [![Stock Analysis](https://img.youtube.com/vi/e0Uj4yWdaAg/maxresdefault.jpg)](https://www.youtube.com/watch?v=e0Uj4yWdaAg "Stock Analysis")
 
-## Connecting Your Crew to a Model
+## Connecting Your Squad to a Model
 
-crewAI supports using various LLMs through a variety of connection options. By default your agents will use the OpenAI API when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a local model via the Ollama tool.
+squadAI supports using various LLMs through a variety of connection options. By default your agents will use the OpenAI API when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a local model via the Ollama tool.
 
-Please refer to the [Connect crewAI to LLMs](https://docs.crewai.com/how-to/LLM-Connections/) page for details on configuring you agents' connections to models.
+Please refer to the [Connect squadAI to LLMs](https://docs.squadai.com/how-to/LLM-Connections/) page for details on configuring you agents' connections to models.
 
-## How CrewAI Compares
+## How SquadAI Compares
 
 - **Autogen**: While Autogen does good in creating conversational agents capable of working together, it lacks an inherent concept of process. In Autogen, orchestrating agents' interactions requires additional programming, which can become complex and cumbersome as the scale of tasks grows.
 
 - **ChatDev**: ChatDev introduced the idea of processes into the realm of AI agents, but its implementation is quite rigid. Customizations in ChatDev are limited and not geared towards production environments, which can hinder scalability and flexibility in real-world applications.
 
-**CrewAI's Advantage**: CrewAI is built with production in mind. It offers the flexibility of Autogen's conversational agents and the structured process approach of ChatDev, but without the rigidity. CrewAI's processes are designed to be dynamic and adaptable, fitting seamlessly into both development and production workflows.
+**SquadAI's Advantage**: SquadAI is built with production in mind. It offers the flexibility of Autogen's conversational agents and the structured process approach of ChatDev, but without the rigidity. SquadAI's processes are designed to be dynamic and adaptable, fitting seamlessly into both development and production workflows.
 
 ## Contribution
 
-CrewAI is open-source and we welcome contributions. If you're looking to contribute, please:
+SquadAI is open-source and we welcome contributions. If you're looking to contribute, please:
 
 - Fork the repository.
 - Create a new branch for your feature.
@@ -248,21 +248,21 @@ pip install dist/*.tar.gz
 
 ## Telemetry
 
-CrewAI uses anonymous telemetry to collect usage data with the main purpose of helping us improve the library by focusing our efforts on the most used features, integrations and tools.
+SquadAI uses anonymous telemetry to collect usage data with the main purpose of helping us improve the library by focusing our efforts on the most used features, integrations and tools.
 
 There is NO data being collected on the prompts, tasks descriptions agents backstories or goals nor tools usage, no API calls, nor responses nor any data that is being processed by the agents, nor any secrets and env vars.
 
 Data collected includes:
 
-- Version of crewAI
+- Version of squadAI
   - So we can understand how many users are using the latest version
 - Version of Python
   - So we can decide on what versions to better support
 - General OS (e.g. number of CPUs, macOS/Windows/Linux)
   - So we know what OS we should focus on and if we could build specific OS related features
-- Number of agents and tasks in a crew
+- Number of agents and tasks in a squad
   - So we make sure we are testing internally with similar use cases and educate people on the best practices
-- Crew Process being used
+- Squad Process being used
   - Understand where we should focus our efforts
 - If Agents are using memory or allowing delegation
   - Understand if we improved the features or maybe even drop them
@@ -270,13 +270,13 @@ Data collected includes:
   - Understand if we should focus more on parallel execution
 - Language model being used
   - Improved support on most used languages
-- Roles of agents in a crew
+- Roles of agents in a squad
   - Understand high level use cases so we can build better tools, integrations and examples about it
 - Tools names available
   - Understand out of the publically available tools, which ones are being used the most so we can improve them
 
-Users can opt-in sharing the complete telemetry data by setting the `share_crew` attribute to `True` on their Crews.
+Users can opt-in sharing the complete telemetry data by setting the `share_squad` attribute to `True` on their Squads.
 
 ## License
 
-CrewAI is released under the MIT License.
+SquadAI is released under the MIT License.

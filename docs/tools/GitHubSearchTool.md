@@ -7,18 +7,18 @@
 The GithubSearchTool is a Read, Append, and Generate (RAG) tool specifically designed for conducting semantic searches within GitHub repositories. Utilizing advanced semantic search capabilities, it sifts through code, pull requests, issues, and repositories, making it an essential tool for developers, researchers, or anyone in need of precise information from GitHub.
 
 ## Installation
-To use the GithubSearchTool, first ensure the crewai_tools package is installed in your Python environment:
+To use the GithubSearchTool, first ensure the squadai_tools package is installed in your Python environment:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
-This command installs the necessary package to run the GithubSearchTool along with any other tools included in the crewai_tools package.
+This command installs the necessary package to run the GithubSearchTool along with any other tools included in the squadai_tools package.
 
 ## Example
 Here’s how you can use the GithubSearchTool to perform semantic searches within a GitHub repository:
 ```python
-from crewai_tools import GithubSearchTool
+from squadai_tools import GithubSearchTool
 
 # Initialize the tool for semantic searches within a specific GitHub repository
 tool = GithubSearchTool(

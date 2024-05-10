@@ -6,7 +6,7 @@ dist/
 assets/*
 .idea
 test/
-docs_crew/
+docs_squad/
 chroma.sqlite3
 old_en.json
 db/

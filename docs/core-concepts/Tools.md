@@ -1,14 +1,14 @@
 ---
-title: crewAI Tools
-description: Understanding and leveraging tools within the crewAI framework for agent collaboration and task execution.
+title: squadAI Tools
+description: Understanding and leveraging tools within the squadAI framework for agent collaboration and task execution.
 ---
 
 ## Introduction
-CrewAI tools empower agents with capabilities ranging from web searching and data analysis to collaboration and delegating tasks among coworkers. This documentation outlines how to create, integrate, and leverage these tools within the CrewAI framework, including a new focus on collaboration tools.
+SquadAI tools empower agents with capabilities ranging from web searching and data analysis to collaboration and delegating tasks among coworkers. This documentation outlines how to create, integrate, and leverage these tools within the SquadAI framework, including a new focus on collaboration tools.
 
 ## What is a Tool?
 !!! note "Definition"
-    A tool in CrewAI is a skill or function that agents can utilize to perform various actions. This includes tools from the [crewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools), enabling everything from simple searches to complex interactions and effective teamwork among agents.
+    A tool in SquadAI is a skill or function that agents can utilize to perform various actions. This includes tools from the [squadAI Toolkit](https://github.com/joaomdmoura/squadai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools), enabling everything from simple searches to complex interactions and effective teamwork among agents.
 
 ## Key Characteristics of Tools
 
@@ -18,21 +18,21 @@ CrewAI tools empower agents with capabilities ranging from web searching and dat
 - **Error Handling**: Incorporates robust error handling mechanisms to ensure smooth operation.
 - **Caching Mechanism**: Features intelligent caching to optimize performance and reduce redundant operations.
 
-## Using crewAI Tools
+## Using squadAI Tools
 
-To enhance your agents' capabilities with crewAI tools, begin by installing our extra tools package:
+To enhance your agents' capabilities with squadAI tools, begin by installing our extra tools package:
 
 ```bash
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 Here's an example demonstrating their use:
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-# Importing crewAI tools
-from crewai_tools import (
+from squadai import Agent, Task, Squad
+# Importing squadAI tools
+from squadai_tools import (
     DirectoryReadTool,
     FileReadTool,
     SerperDevTool,
@@ -80,18 +80,18 @@ write = Task(
     output_file='blog-posts/new_post.md'  # The final blog post will be saved here
 )
 
-# Assemble a crew
-crew = Crew(
+# Assemble a squad
+squad = Squad(
     agents=[researcher, writer],
     tasks=[research, write],
     verbose=2
 )
 
 # Execute tasks
-crew.kickoff()
+squad.kickoff()
 ```
 
-## Available crewAI Tools
+## Available squadAI Tools
 
 - **Error Handling**: All tools are built with error handling capabilities, allowing agents to gracefully manage exceptions and continue their tasks.
 - **Caching Mechanism**: All tools support caching, enabling agents to efficiently reuse previously obtained results, reducing the load on external resources and speeding up the execution time, you can also define finner control over the caching mechanism, using `cache_function` attribute on the tool.
@@ -127,17 +127,17 @@ Here is a list of the available tools and their descriptions:
     Developers can craft custom tools tailored for their agent’s needs or utilize pre-built options:
 
 
-To create your own crewAI tools you will need to install our extra tools package:
+To create your own squadAI tools you will need to install our extra tools package:
 
 ```bash
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
-Once you do that there are two main ways for one to create a crewAI tool:
+Once you do that there are two main ways for one to create a squadAI tool:
 ### Subclassing `BaseTool`
 
 ```python
-from crewai_tools import BaseTool
+from squadai_tools import BaseTool
 
 class MyCustomTool(BaseTool):
     name: str = "Name of my tool"
@@ -151,7 +151,7 @@ class MyCustomTool(BaseTool):
 ### Utilizing the `tool` Decorator
 
 ```python
-from crewai_tools import tool
+from squadai_tools import tool
 @tool("Name of my tool")
 def my_tool(question: str) -> str:
     """Clear description for what this tool is useful for, you agent will need this information to use it."""
@@ -164,7 +164,7 @@ def my_tool(question: str) -> str:
     Tools can optionally implement a `cache_function` to fine-tune caching behavior. This function determines when to cache results based on specific conditions, offering granular control over caching logic.
 
 ```python
-from crewai_tools import tool
+from squadai_tools import tool
 
 @tool
 def multiplication_tool(first_number: int, second_number: int) -> str:
@@ -190,11 +190,11 @@ writer1 = Agent(
 
 ## Using LangChain Tools
 !!! info "LangChain Integration"
-    CrewAI seamlessly integrates with LangChain’s comprehensive toolkit for search-based queries and more, here are the available built-in tools that are offered by Langchain [LangChain Toolkit](https://python.langchain.com/docs/integrations/tools/)
+    SquadAI seamlessly integrates with LangChain’s comprehensive toolkit for search-based queries and more, here are the available built-in tools that are offered by Langchain [LangChain Toolkit](https://python.langchain.com/docs/integrations/tools/)
  :
 
 ```python
-from crewai import Agent
+from squadai import Agent
 from langchain.agents import Tool
 from langchain.utilities import GoogleSerperAPIWrapper
 
@@ -221,4 +221,4 @@ agent = Agent(
 ```
 
 ## Conclusion
-Tools are pivotal in extending the capabilities of CrewAI agents, enabling them to undertake a broad spectrum of tasks and collaborate effectively. When building solutions with CrewAI, leverage both custom and existing tools to empower your agents and enhance the AI ecosystem. Consider utilizing error handling, caching mechanisms, and the flexibility of tool arguments to optimize your agents' performance and capabilities.
+Tools are pivotal in extending the capabilities of SquadAI agents, enabling them to undertake a broad spectrum of tasks and collaborate effectively. When building solutions with SquadAI, leverage both custom and existing tools to empower your agents and enhance the AI ecosystem. Consider utilizing error handling, caching mechanisms, and the flexibility of tool arguments to optimize your agents' performance and capabilities.

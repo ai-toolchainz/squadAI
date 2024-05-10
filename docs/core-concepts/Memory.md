@@ -1,11 +1,11 @@
 ---
-title: crewAI Memory Systems
-description: Leveraging memory systems in the crewAI framework to enhance agent capabilities.
+title: squadAI Memory Systems
+description: Leveraging memory systems in the squadAI framework to enhance agent capabilities.
 ---
 
-## Introduction to Memory Systems in crewAI
+## Introduction to Memory Systems in squadAI
 !!! note "Enhancing Agent Intelligence"
-    The crewAI framework introduces a sophisticated memory system designed to significantly enhance the capabilities of AI agents. This system comprises short-term memory, long-term memory, entity memory, and newly identified contextual memory, each serving a unique purpose in aiding agents to remember, reason, and learn from past interactions.
+    The squadAI framework introduces a sophisticated memory system designed to significantly enhance the capabilities of AI agents. This system comprises short-term memory, long-term memory, entity memory, and newly identified contextual memory, each serving a unique purpose in aiding agents to remember, reason, and learn from past interactions.
 
 ## Memory System Components
 
@@ -24,19 +24,19 @@ description: Leveraging memory systems in the crewAI framework to enhance agent 
 
 3. **Entity Understanding**: By maintaining entity memory, agents can recognize and remember key entities, enhancing their ability to process and interact with complex information.
 
-## Implementing Memory in Your Crew
+## Implementing Memory in Your Squad
 
-When configuring a crew, you can enable and customize each memory component to suit the crew's objectives and the nature of tasks it will perform.
-By default, the memory system is disabled, and you can ensure it is active by setting `memory=True` in the crew configuration.
+When configuring a squad, you can enable and customize each memory component to suit the squad's objectives and the nature of tasks it will perform.
+By default, the memory system is disabled, and you can ensure it is active by setting `memory=True` in the squad configuration.
 The memory will use OpenAI Embeddings by default, but you can change it by setting `embedder` to a different model.
 
-### Example: Configuring Memory for a Crew
+### Example: Configuring Memory for a Squad
 
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-# Assemble your crew with memory capabilities
-my_crew = Crew(
+# Assemble your squad with memory capabilities
+my_squad = Squad(
     agents=[...],
     tasks=[...],
     process=Process.sequential,
@@ -49,9 +49,9 @@ my_crew = Crew(
 
 ### Using OpenAI embeddings (already default)
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -68,9 +68,9 @@ my_crew = Crew(
 
 ### Using Google AI embeddings
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -89,9 +89,9 @@ my_crew = Crew(
 
 ### Using Azure OpenAI embeddings
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -109,9 +109,9 @@ my_crew = Crew(
 
 ### Using GPT4ALL embeddings
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -125,9 +125,9 @@ my_crew = Crew(
 
 ### Using Vertex AI embeddings
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -144,9 +144,9 @@ my_crew = Crew(
 
 ### Using Cohere embeddings
 ```python
-from crewai import Crew, Agent, Task, Process
+from squadai import Squad, Agent, Task, Process
 
-my_crew = Crew(
+my_squad = Squad(
 		agents=[...],
 		tasks=[...],
 		process=Process.sequential,
@@ -162,10 +162,10 @@ my_crew = Crew(
 )
 ```
 
-## Benefits of Using crewAI's Memory System
-- **Adaptive Learning:** Crews become more efficient over time, adapting to new information and refining their approach to tasks.
+## Benefits of Using squadAI's Memory System
+- **Adaptive Learning:** Squads become more efficient over time, adapting to new information and refining their approach to tasks.
 - **Enhanced Personalization:** Memory enables agents to remember user preferences and historical interactions, leading to personalized experiences.
 - **Improved Problem Solving:** Access to a rich memory store aids agents in making more informed decisions, drawing on past learnings and contextual insights.
 
 ## Getting Started
-Integrating crewAI's memory system into your projects is straightforward. By leveraging the provided memory components and configurations, you can quickly empower your agents with the ability to remember, reason, and learn from their interactions, unlocking new levels of intelligence and capability.
+Integrating squadAI's memory system into your projects is straightforward. By leveraging the provided memory components and configurations, you can quickly empower your agents with the ability to remember, reason, and learn from their interactions, unlocking new levels of intelligence and capability.

@@ -1,6 +1,6 @@
 import pytest
 
-from crewai.utilities.i18n import I18N
+from squadai.utilities.i18n import I18N
 
 
 def test_load_prompts():

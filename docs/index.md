@@ -1,8 +1,8 @@
-<img src='./crew_only_logo.png' width='250' class='mb-10'/>
+<img src='./squad_only_logo.png' width='250' class='mb-10'/>
 
-# crewAI Documentation
+# squadAI Documentation
 
-Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.
+Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks.
 
 <div style="display:flex; margin:0 auto; justify-content: center;">
     <div style="width:25%">
@@ -29,8 +29,8 @@ Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By 
                 </a>
             </li>
             <li>
-                <a href="./core-concepts/Crews">
-                    Crews
+                <a href="./core-concepts/Squads">
+                    Squads
                 </a>
             </li>
             <li>
@@ -44,12 +44,12 @@ Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By 
         <h2>How-To Guides</h2>
         <ul>
             <li>
-                <a href="./how-to/Installing-CrewAI">
-                    Installing crewAI
+                <a href="./how-to/Installing-SquadAI">
+                    Installing squadAI
                 </a>
             </li>
             <li>
-                <a href="./how-to/Creating-a-Crew-and-kick-it-off">
+                <a href="./how-to/Creating-a-Squad-and-kick-it-off">
                     Getting Started
                 </a>
             </li>
@@ -94,37 +94,37 @@ Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By 
         <h2>Examples</h2>
         <ul>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/prep-for-a-meeting">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/prep-for-a-meeting">
                     Prepare for meetings
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/trip_planner">
-                    Trip Planner Crew
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/trip_planner">
+                    Trip Planner Squad
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/instagram_post">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/instagram_post">
                     Create Instagram Post
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/stock_analysis">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/stock_analysis">
                     Stock Analysis
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/game-builder-crew">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/game-builder-squad">
                     Game Generator
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/CrewAI-LangGraph">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/SquadAI-LangGraph">
                     Drafting emails with LangGraph
                 </a>
             </li>
             <li>
-                <a target='_blank' href="https://github.com/joaomdmoura/crewAI-examples/tree/main/landing_page_generator">
+                <a target='_blank' href="https://github.com/joaomdmoura/squadAI-examples/tree/main/landing_page_generator">
                     Landing Page Generator
                 </a>
             </li>

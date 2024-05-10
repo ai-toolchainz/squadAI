@@ -7,19 +7,19 @@
 The PGSearchTool is envisioned as a powerful tool for facilitating semantic searches within PostgreSQL database tables. By leveraging advanced Retrieve and Generate (RAG) technology, it aims to provide an efficient means for querying database table content, specifically tailored for PostgreSQL databases. The tool's goal is to simplify the process of finding relevant data through semantic search queries, offering a valuable resource for users needing to conduct advanced queries on extensive datasets within a PostgreSQL environment.
 
 ## Installation
-The `crewai_tools` package, which will include the PGSearchTool upon its release, can be installed using the following command:
+The `squadai_tools` package, which will include the PGSearchTool upon its release, can be installed using the following command:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
-(Note: The PGSearchTool is not yet available in the current version of the `crewai_tools` package. This installation command will be updated once the tool is released.)
+(Note: The PGSearchTool is not yet available in the current version of the `squadai_tools` package. This installation command will be updated once the tool is released.)
 
 ## Example Usage
 Below is a proposed example showcasing how to use the PGSearchTool for conducting a semantic search on a table within a PostgreSQL database:
 
 ```python
-from crewai_tools import PGSearchTool
+from squadai_tools import PGSearchTool
 
 # Initialize the tool with the database URI and the target table name
 tool = PGSearchTool(db_uri='postgresql://user:password@localhost:5432/mydatabase', table_name='employees')

@@ -1,11 +1,11 @@
-site_name: crewAI
-site_author: crewAI, Inc
-site_description: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.
-repo_name: crewAI
-repo_url: https://github.com/joaomdmoura/crewai/
-site_url: https://crewai.com
+site_name: squadAI
+site_author: squadAI, Inc
+site_description: Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, SquadAI empowers agents to work together seamlessly, tackling complex tasks.
+repo_name: squadAI
+repo_url: https://github.com/joaomdmoura/squadai/
+site_url: https://squadai.com
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2024 crewAI, Inc
+copyright: Copyright &copy; 2024 squadAI, Inc
 
 markdown_extensions:
   - abbr
@@ -35,7 +35,7 @@ markdown_extensions:
       normalize_issue_symbols: true
       repo_url_shorthand: true
       user: joaomdmoura
-      repo: crewAI
+      repo: squadAI
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
@@ -124,12 +124,12 @@ nav:
     - Tasks: 'core-concepts/Tasks.md'
     - Tools: 'core-concepts/Tools.md'
     - Processes: 'core-concepts/Processes.md'
-    - Crews: 'core-concepts/Crews.md'
+    - Squads: 'core-concepts/Squads.md'
     - Collaboration: 'core-concepts/Collaboration.md'
     - Memory: 'core-concepts/Memory.md'
   - How to Guides:
-    - Installing CrewAI: 'how-to/Installing-CrewAI.md'
-    - Getting Started: 'how-to/Creating-a-Crew-and-kick-it-off.md'
+    - Installing SquadAI: 'how-to/Installing-SquadAI.md'
+    - Getting Started: 'how-to/Creating-a-Squad-and-kick-it-off.md'
     - Create Custom Tools: 'how-to/Create-Custom-Tools.md'
     - Using Sequential Process: 'how-to/Sequential.md'
     - Using Hierarchical Process: 'how-to/Hierarchical.md'
@@ -159,13 +159,13 @@ nav:
     - Youtube Video RAG Search: 'tools/YoutubeVideoSearchTool.md'
     - Youtube Channel RAG Search: 'tools/YoutubeChannelSearchTool.md'
   - Examples:
-    - Trip Planner Crew: https://github.com/joaomdmoura/crewAI-examples/tree/main/trip_planner"
-    - Create Instagram Post: https://github.com/joaomdmoura/crewAI-examples/tree/main/instagram_post"
-    - Stock Analysis: https://github.com/joaomdmoura/crewAI-examples/tree/main/stock_analysis"
-    - Game Generator: https://github.com/joaomdmoura/crewAI-examples/tree/main/game-builder-crew"
-    - Drafting emails with LangGraph: https://github.com/joaomdmoura/crewAI-examples/tree/main/CrewAI-LangGraph"
-    - Landing Page Generator: https://github.com/joaomdmoura/crewAI-examples/tree/main/landing_page_generator"
-    - Prepare for meetings: https://github.com/joaomdmoura/crewAI-examples/tree/main/prep-for-a-meeting"
+    - Trip Planner Squad: https://github.com/joaomdmoura/squadAI-examples/tree/main/trip_planner"
+    - Create Instagram Post: https://github.com/joaomdmoura/squadAI-examples/tree/main/instagram_post"
+    - Stock Analysis: https://github.com/joaomdmoura/squadAI-examples/tree/main/stock_analysis"
+    - Game Generator: https://github.com/joaomdmoura/squadAI-examples/tree/main/game-builder-squad"
+    - Drafting emails with LangGraph: https://github.com/joaomdmoura/squadAI-examples/tree/main/SquadAI-LangGraph"
+    - Landing Page Generator: https://github.com/joaomdmoura/squadAI-examples/tree/main/landing_page_generator"
+    - Prepare for meetings: https://github.com/joaomdmoura/squadAI-examples/tree/main/prep-for-a-meeting"
   - Telemetry: 'telemetry/Telemetry.md'
 
 extra_css:
@@ -183,4 +183,4 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/joaomdmoura
     - icon: fontawesome/brands/github
-      link: https://github.com/joaomdmoura/crewAI
+      link: https://github.com/joaomdmoura/squadAI

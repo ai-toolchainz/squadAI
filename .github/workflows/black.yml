@@ -13,4 +13,4 @@ jobs:
           pip install black
 
       - name: Run Black
-        run: black . --exclude "cli/templates/crew.py" --extend-exclude "cli/templates/main.py"
+        run: black . --exclude "cli/templates/squad.py" --extend-exclude "cli/templates/main.py"

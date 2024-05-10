@@ -1,26 +1,26 @@
 ---
 title: Human Input on Execution
-description: Integrating CrewAI with human input during execution in complex decision-making processes and leveraging the full capabilities of the agent's attributes and tools.
+description: Integrating SquadAI with human input during execution in complex decision-making processes and leveraging the full capabilities of the agent's attributes and tools.
 ---
 
 # Human Input in Agent Execution
 
 Human input is critical in several agent execution scenarios, allowing agents to request additional information or clarification when necessary. This feature is especially useful in complex decision-making processes or when agents require more details to complete a task effectively.
 
-## Using Human Input with CrewAI
+## Using Human Input with SquadAI
 
 To integrate human input into agent execution, set the `human_input` flag in the task definition. When enabled, the agent prompts the user for input before delivering its final answer. This input can provide extra context, clarify ambiguities, or validate the agent's output.
 
 ### Example:
 
 ```shell
-pip install crewai
+pip install squadai
 ```
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from squadai import Agent, Task, Squad
+from squadai_tools import SerperDevTool
 
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 os.environ["OPENAI_API_KEY"] = "Your Key"
@@ -78,15 +78,15 @@ task2 = Task(
   agent=writer
 )
 
-# Instantiate your crew with a sequential process
-crew = Crew(
+# Instantiate your squad with a sequential process
+squad = Squad(
   agents=[researcher, writer],
   tasks=[task1, task2],
   verbose=2
 )
 
-# Get your crew to work!
-result = crew.kickoff()
+# Get your squad to work!
+result = squad.kickoff()
 
 print("######################")
 print(result)

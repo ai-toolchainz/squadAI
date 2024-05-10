@@ -40,7 +40,7 @@ interactions:
       User-Agent:
       - OTel-OTLP-Exporter-Python/1.23.0
     method: POST
-    uri: http://telemetry.crewai.com:4318/v1/traces
+    uri: http://telemetry.squadai.com:4318/v1/traces
   response:
     body:
       string: "\n\0"
@@ -55,7 +55,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"messages": [{"role": "user", "content": "You are Crew Manager. You are
+    body: '{"messages": [{"role": "user", "content": "You are Squad Manager. You are
       a seasoned manager with a knack for getting the best out of your team.\nYou
       are also known for your ability to delegate work to the right people, and to
       ask the right questions to get the best out of your team.\nEven though you don''t
@@ -772,7 +772,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '221'
       openai-version:
@@ -2411,7 +2411,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '271'
       openai-version:
@@ -2436,7 +2436,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"messages": [{"role": "user", "content": "You are Crew Manager. You are
+    body: '{"messages": [{"role": "user", "content": "You are Squad Manager. You are
       a seasoned manager with a knack for getting the best out of your team.\nYou
       are also known for your ability to delegate work to the right people, and to
       ask the right questions to get the best out of your team.\nEven though you don''t
@@ -3393,7 +3393,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '224'
       openai-version:
@@ -5330,7 +5330,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '203'
       openai-version:
@@ -5355,7 +5355,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"messages": [{"role": "user", "content": "You are Crew Manager. You are
+    body: '{"messages": [{"role": "user", "content": "You are Squad Manager. You are
       a seasoned manager with a knack for getting the best out of your team.\nYou
       are also known for your ability to delegate work to the right people, and to
       ask the right questions to get the best out of your team.\nEven though you don''t
@@ -7237,7 +7237,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '499'
       openai-version:

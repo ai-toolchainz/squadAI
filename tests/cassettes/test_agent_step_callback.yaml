@@ -272,7 +272,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '254'
       openai-version:
@@ -622,7 +622,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '264'
       openai-version:
@@ -682,7 +682,7 @@ interactions:
       User-Agent:
       - OTel-OTLP-Exporter-Python/1.23.0
     method: POST
-    uri: http://telemetry.crewai.com:4318/v1/traces
+    uri: http://telemetry.squadai.com:4318/v1/traces
   response:
     body:
       string: "\n\0"
@@ -999,7 +999,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '346'
       openai-version:
@@ -1617,7 +1617,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '284'
       openai-version:

@@ -237,7 +237,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '231'
       openai-version:
@@ -402,7 +402,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '452'
       openai-version:
@@ -652,7 +652,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '437'
       openai-version:
@@ -818,7 +818,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '508'
       openai-version:
@@ -1087,7 +1087,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '469'
       openai-version:
@@ -1253,7 +1253,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '338'
       openai-version:
@@ -1519,7 +1519,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '235'
       openai-version:
@@ -1685,7 +1685,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '220'
       openai-version:

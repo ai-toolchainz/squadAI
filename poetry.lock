@@ -714,9 +714,9 @@ files = [
 ]
 
 [[package]]
-name = "crewai-tools"
+name = "squadai-tools"
 version = "0.2.4"
-description = "Set of tools for the crewAI framework"
+description = "Set of tools for the squadAI framework"
 optional = false
 python-versions = "*"
 files = []
@@ -724,7 +724,7 @@ develop = false
 
 [package.source]
 type = "directory"
-url = "../crewai-tools"
+url = "../squadai-tools"
 
 [[package]]
 name = "cssselect2"
@@ -4852,7 +4852,7 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.link
 testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
 
 [extras]
-tools = ["crewai-tools"]
+tools = ["squadai-tools"]
 
 [metadata]
 lock-version = "2.0"

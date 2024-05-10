@@ -7,17 +7,17 @@
 The PDFSearchTool is a RAG tool designed for semantic searches within PDF content. It allows for inputting a search query and a PDF document, leveraging advanced search techniques to find relevant content efficiently. This capability makes it especially useful for extracting specific information from large PDF files quickly.
 
 ## Installation
-To get started with the PDFSearchTool, first, ensure the crewai_tools package is installed with the following command:
+To get started with the PDFSearchTool, first, ensure the squadai_tools package is installed with the following command:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Example
 Here's how to use the PDFSearchTool to search within a PDF document:
 
 ```python
-from crewai_tools import PDFSearchTool
+from squadai_tools import PDFSearchTool
 
 # Initialize the tool allowing for any PDF content search if the path is provided during execution
 tool = PDFSearchTool()

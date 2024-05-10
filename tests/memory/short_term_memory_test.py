@@ -1,7 +1,7 @@
 import pytest
 
-from crewai.memory.short_term.short_term_memory import ShortTermMemory
-from crewai.memory.short_term.short_term_memory_item import ShortTermMemoryItem
+from squadai.memory.short_term.short_term_memory import ShortTermMemory
+from squadai.memory.short_term.short_term_memory_item import ShortTermMemoryItem
 
 
 @pytest.fixture

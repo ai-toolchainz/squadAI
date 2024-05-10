@@ -7,14 +7,14 @@
 A tool designed to extract and read the content of a specified website. It is capable of handling various types of web pages by making HTTP requests and parsing the received HTML content. This tool can be particularly useful for web scraping tasks, data collection, or extracting specific information from websites.
 
 ## Installation
-Install the crewai_tools package
+Install the squadai_tools package
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Example
 ```python
-from crewai_tools import ScrapeWebsiteTool
+from squadai_tools import ScrapeWebsiteTool
 
 # To enable scrapping any website it finds during it's execution
 tool = ScrapeWebsiteTool()

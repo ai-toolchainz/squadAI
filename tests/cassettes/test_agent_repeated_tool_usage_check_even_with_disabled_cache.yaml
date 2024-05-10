@@ -327,7 +327,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '264'
       openai-version:
@@ -666,7 +666,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '443'
       openai-version:
@@ -860,7 +860,7 @@ interactions:
       openai-model:
       - gpt-4-0613
       openai-organization:
-      - crewai-iuxna1
+      - squadai-iuxna1
       openai-processing-ms:
       - '256'
       openai-version:

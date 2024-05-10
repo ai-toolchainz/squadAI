@@ -7,17 +7,17 @@
 The DirectorySearchTool enables semantic search within the content of specified directories, leveraging the Retrieval-Augmented Generation (RAG) methodology for efficient navigation through files. Designed for flexibility, it allows users to dynamically specify search directories at runtime or set a fixed directory during initial setup.
 
 ## Installation
-To use the DirectorySearchTool, begin by installing the crewai_tools package. Execute the following command in your terminal:
+To use the DirectorySearchTool, begin by installing the squadai_tools package. Execute the following command in your terminal:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Initialization and Usage
-Import the DirectorySearchTool from the `crewai_tools` package to start. You can initialize the tool without specifying a directory, enabling the setting of the search directory at runtime. Alternatively, the tool can be initialized with a predefined directory.
+Import the DirectorySearchTool from the `squadai_tools` package to start. You can initialize the tool without specifying a directory, enabling the setting of the search directory at runtime. Alternatively, the tool can be initialized with a predefined directory.
 
 ```python
-from crewai_tools import DirectorySearchTool
+from squadai_tools import DirectorySearchTool
 
 # For dynamic directory specification at runtime
 tool = DirectorySearchTool()

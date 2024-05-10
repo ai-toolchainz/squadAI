@@ -10,7 +10,7 @@ The WebsiteSearchTool is designed as a concept for conducting semantic searches 
 To prepare your environment for when the WebsiteSearchTool becomes available, you can install the foundational package with:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 This command installs the necessary dependencies to ensure that once the tool is fully integrated, users can start using it immediately.
@@ -19,7 +19,7 @@ This command installs the necessary dependencies to ensure that once the tool is
 Below are examples of how the WebsiteSearchTool could be utilized in different scenarios. Please note, these examples are illustrative and represent planned functionality:
 
 ```python
-from crewai_tools import WebsiteSearchTool
+from squadai_tools import WebsiteSearchTool
 
 # Example of initiating tool that agents can use to search across any discovered websites
 tool = WebsiteSearchTool()

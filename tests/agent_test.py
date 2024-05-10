@@ -7,13 +7,13 @@ from langchain.tools import tool
 from langchain_core.exceptions import OutputParserException
 from langchain_openai import ChatOpenAI
 
-from crewai import Agent, Crew, Task
-from crewai.agents.cache import CacheHandler
-from crewai.agents.executor import CrewAgentExecutor
-from crewai.agents.parser import CrewAgentParser
-from crewai.tools.tool_calling import InstructorToolCalling
-from crewai.tools.tool_usage import ToolUsage
-from crewai.utilities import RPMController
+from squadai import Agent, Squad, Task
+from squadai.agents.cache import CacheHandler
+from squadai.agents.executor import SquadAgentExecutor
+from squadai.agents.parser import SquadAgentParser
+from squadai.tools.tool_calling import InstructorToolCalling
+from squadai.tools.tool_usage import ToolUsage
+from squadai.utilities import RPMController
 
 
 def test_agent_creation():
@@ -293,7 +293,7 @@ def test_agent_custom_max_iterations():
     )
 
     with patch.object(
-        CrewAgentExecutor, "_iter_next_step", wraps=agent.agent_executor._iter_next_step
+        SquadAgentExecutor, "_iter_next_step", wraps=agent.agent_executor._iter_next_step
     ) as private_mock:
         task = Task(
             description="The final answer is 42. But don't give it yet, instead keep using the `get_final_answer` tool.",
@@ -441,7 +441,7 @@ def test_agent_respect_the_max_rpm_set(capsys):
 
 
 @pytest.mark.vcr(filter_headers=["authorization"])
-def test_agent_respect_the_max_rpm_set_over_crew_rpm(capsys):
+def test_agent_respect_the_max_rpm_set_over_squad_rpm(capsys):
     from unittest.mock import patch
 
     from langchain.tools import tool
@@ -468,18 +468,18 @@ def test_agent_respect_the_max_rpm_set_over_crew_rpm(capsys):
         agent=agent,
     )
 
-    crew = Crew(agents=[agent], tasks=[task], max_rpm=1, verbose=2)
+    squad = Squad(agents=[agent], tasks=[task], max_rpm=1, verbose=2)
 
     with patch.object(RPMController, "_wait_for_next_minute") as moveon:
         moveon.return_value = True
-        crew.kickoff()
+        squad.kickoff()
         captured = capsys.readouterr()
         assert "Max RPM reached, waiting for next minute to start." not in captured.out
         moveon.assert_not_called()
 
 
 @pytest.mark.vcr(filter_headers=["authorization"])
-def test_agent_without_max_rpm_respet_crew_rpm(capsys):
+def test_agent_without_max_rpm_respet_squad_rpm(capsys):
     from unittest.mock import patch
 
     from langchain.tools import tool
@@ -520,11 +520,11 @@ def test_agent_without_max_rpm_respet_crew_rpm(capsys):
         ),
     ]
 
-    crew = Crew(agents=[agent1, agent2], tasks=tasks, max_rpm=1, verbose=2)
+    squad = Squad(agents=[agent1, agent2], tasks=tasks, max_rpm=1, verbose=2)
 
     with patch.object(RPMController, "_wait_for_next_minute") as moveon:
         moveon.return_value = True
-        crew.kickoff()
+        squad.kickoff()
         captured = capsys.readouterr()
         assert "get_final_answer" in captured.out
         assert "Max RPM reached, waiting for next minute to start." in captured.out
@@ -558,7 +558,7 @@ def test_agent_error_on_parsing_tool(capsys):
         )
     ]
 
-    crew = Crew(
+    squad = Squad(
         agents=[agent1],
         tasks=tasks,
         verbose=2,
@@ -567,7 +567,7 @@ def test_agent_error_on_parsing_tool(capsys):
 
     with patch.object(ToolUsage, "_render") as force_exception:
         force_exception.side_effect = Exception("Error on parsing tool.")
-        crew.kickoff()
+        squad.kickoff()
         captured = capsys.readouterr()
         assert "Error on parsing tool." in captured.out
 
@@ -600,10 +600,10 @@ def test_agent_remembers_output_format_after_using_tools_too_many_times():
         )
     ]
 
-    crew = Crew(agents=[agent1], tasks=tasks, verbose=2)
+    squad = Squad(agents=[agent1], tasks=tasks, verbose=2)
 
     with patch.object(ToolUsage, "_remember_format") as remember_format:
-        crew.kickoff()
+        squad.kickoff()
         remember_format.assert_called()
 
 
@@ -628,8 +628,8 @@ def test_agent_use_specific_tasks_output_as_context(capsys):
 
     tasks = [say_hi_task, say_bye_task, answer_task]
 
-    crew = Crew(agents=[agent1, agent2], tasks=tasks)
-    result = crew.kickoff()
+    squad = Squad(agents=[agent1, agent2], tasks=tasks)
+    result = squad.kickoff()
     assert "bye" not in result.lower()
     assert "hi" in result.lower() or "hello" in result.lower()
 
@@ -661,10 +661,10 @@ def test_agent_step_callback():
             agent=agent1,
         )
         tasks = [essay]
-        crew = Crew(agents=[agent1], tasks=tasks)
+        squad = Squad(agents=[agent1], tasks=tasks)
 
         callback.return_value = "ok"
-        crew.kickoff()
+        squad.kickoff()
         callback.assert_called()
 
 
@@ -696,9 +696,9 @@ def test_agent_function_calling_llm():
             agent=agent1,
         )
         tasks = [essay]
-        crew = Crew(agents=[agent1], tasks=tasks)
+        squad = Squad(agents=[agent1], tasks=tasks)
 
-        crew.kickoff()
+        squad.kickoff()
         private_mock.assert_called()
 
 
@@ -712,7 +712,7 @@ def test_agent_count_formatting_error():
         verbose=True,
     )
 
-    parser = CrewAgentParser()
+    parser = SquadAgentParser()
     parser.agent = agent1
 
     with patch.object(Agent, "increment_formatting_errors") as mock_count_errors:
@@ -775,7 +775,7 @@ def test_agent_human_input():
         human_input=True,
     )
 
-    with patch.object(CrewAgentExecutor, "_ask_human_input") as mock_human_input:
+    with patch.object(SquadAgentExecutor, "_ask_human_input") as mock_human_input:
         mock_human_input.return_value = "Hello"
         output = agent.execute_task(task)
         mock_human_input.assert_called_once()

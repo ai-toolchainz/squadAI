@@ -9,10 +9,10 @@ The CodeDocsSearchTool is a powerful RAG (Retrieval-Augmented Generation) tool d
 
 ## Installation
 
-To start using the CodeDocsSearchTool, first, install the crewai_tools package via pip:
+To start using the CodeDocsSearchTool, first, install the squadai_tools package via pip:
 
 ```
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Example
@@ -20,7 +20,7 @@ pip install 'crewai[tools]'
 Utilize the CodeDocsSearchTool as follows to conduct searches within code documentation:
 
 ```python
-from crewai_tools import CodeDocsSearchTool
+from squadai_tools import CodeDocsSearchTool
 
 # To search any code documentation content if the URL is known or discovered during its execution:
 tool = CodeDocsSearchTool()

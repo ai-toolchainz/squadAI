@@ -2,8 +2,8 @@
 
 import pytest
 
-from crewai.agent import Agent
-from crewai.tools.agent_tools import AgentTools
+from squadai.agent import Agent
+from squadai.tools.agent_tools import AgentTools
 
 researcher = Agent(
     role="researcher",

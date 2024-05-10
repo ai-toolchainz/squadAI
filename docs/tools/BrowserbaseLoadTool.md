@@ -7,10 +7,10 @@
 ## Installation
 
 - Get an API key from [browserbase.com](https://browserbase.com) and set it in environment variables (`BROWSERBASE_API_KEY`).
-- Install the [Browserbase SDK](http://github.com/browserbase/python-sdk) along with `crewai[tools]` package:
+- Install the [Browserbase SDK](http://github.com/browserbase/python-sdk) along with `squadai[tools]` package:
 
 ```
-pip install browserbase 'crewai[tools]'
+pip install browserbase 'squadai[tools]'
 ```
 
 ## Example
@@ -18,7 +18,7 @@ pip install browserbase 'crewai[tools]'
 Utilize the BrowserbaseLoadTool as follows to allow your agent to load websites:
 
 ```python
-from crewai_tools import BrowserbaseLoadTool
+from squadai_tools import BrowserbaseLoadTool
 
 tool = BrowserbaseLoadTool()
 ```

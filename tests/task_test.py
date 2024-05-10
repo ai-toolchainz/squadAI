@@ -6,7 +6,7 @@ import pytest
 from pydantic import BaseModel
 from pydantic_core import ValidationError
 
-from crewai import Agent, Crew, Process, Task
+from squadai import Agent, Squad, Process, Task
 
 
 def test_task_tool_reflect_agent_tools():
@@ -175,8 +175,8 @@ def test_output_pydantic():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task])
-    result = crew.kickoff()
+    squad = Squad(agents=[scorer], tasks=[task])
+    result = squad.kickoff()
     assert isinstance(result, ScoreOutput)
 
 
@@ -199,8 +199,8 @@ def test_output_json():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task])
-    result = crew.kickoff()
+    squad = Squad(agents=[scorer], tasks=[task])
+    result = squad.kickoff()
     assert '{\n  "score": 4\n}' == result
 
 
@@ -235,8 +235,8 @@ def test_output_pydantic_to_another_task():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task1, task2], verbose=2)
-    result = crew.kickoff()
+    squad = Squad(agents=[scorer], tasks=[task1, task2], verbose=2)
+    result = squad.kickoff()
     assert 5 == result.score
 
 
@@ -266,8 +266,8 @@ def test_output_json_to_another_task():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task1, task2])
-    result = crew.kickoff()
+    squad = Squad(agents=[scorer], tasks=[task1, task2])
+    result = squad.kickoff()
     assert '{\n  "score": 3\n}' == result
 
 
@@ -287,11 +287,11 @@ def test_save_task_output():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task])
+    squad = Squad(agents=[scorer], tasks=[task])
 
     with patch.object(Task, "_save_file") as save_file:
         save_file.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         save_file.assert_called_once()
 
 
@@ -315,11 +315,11 @@ def test_save_task_json_output():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task])
+    squad = Squad(agents=[scorer], tasks=[task])
 
     with patch.object(Task, "_save_file") as save_file:
         save_file.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         save_file.assert_called_once_with('{\n  "score": 4\n}')
 
 
@@ -343,11 +343,11 @@ def test_save_task_pydantic_output():
         agent=scorer,
     )
 
-    crew = Crew(agents=[scorer], tasks=[task])
+    squad = Squad(agents=[scorer], tasks=[task])
 
     with patch.object(Task, "_save_file") as save_file:
         save_file.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         save_file.assert_called_once_with('{"score":4}')
 
 
@@ -367,7 +367,7 @@ def test_increment_delegations_for_hierarchical_process():
         expected_output="The score of the title.",
     )
 
-    crew = Crew(
+    squad = Squad(
         agents=[scorer],
         tasks=[task],
         process=Process.hierarchical,
@@ -376,7 +376,7 @@ def test_increment_delegations_for_hierarchical_process():
 
     with patch.object(Task, "increment_delegations") as increment_delegations:
         increment_delegations.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         increment_delegations.assert_called_once
 
 
@@ -404,7 +404,7 @@ def test_increment_delegations_for_sequential_process():
         agent=manager,
     )
 
-    crew = Crew(
+    squad = Squad(
         agents=[manager, scorer],
         tasks=[task],
         process=Process.sequential,
@@ -412,13 +412,13 @@ def test_increment_delegations_for_sequential_process():
 
     with patch.object(Task, "increment_delegations") as increment_delegations:
         increment_delegations.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         increment_delegations.assert_called_once
 
 
 @pytest.mark.vcr(filter_headers=["authorization"])
 def test_increment_tool_errors():
-    from crewai_tools import tool
+    from squadai_tools import tool
     from langchain_openai import ChatOpenAI
 
     @tool
@@ -438,7 +438,7 @@ def test_increment_tool_errors():
         expected_output="The score of the title.",
     )
 
-    crew = Crew(
+    squad = Squad(
         agents=[scorer],
         tasks=[task],
         process=Process.hierarchical,
@@ -447,7 +447,7 @@ def test_increment_tool_errors():
 
     with patch.object(Task, "increment_tools_errors") as increment_tools_errors:
         increment_tools_errors.return_value = None
-        crew.kickoff()
+        squad.kickoff()
         increment_tools_errors.assert_called_once
 
 

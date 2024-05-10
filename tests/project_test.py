@@ -1,9 +1,9 @@
-from crewai.agent import Agent
-from crewai.project import agent, task
-from crewai.task import Task
+from squadai.agent import Agent
+from squadai.project import agent, task
+from squadai.task import Task
 
 
-class SimpleCrew:
+class SimpleSquad:
     @agent
     def simple_agent(self):
         return Agent(
@@ -16,9 +16,9 @@ class SimpleCrew:
 
 
 def test_agent_memoization():
-    crew = SimpleCrew()
-    first_call_result = crew.simple_agent()
-    second_call_result = crew.simple_agent()
+    squad = SimpleSquad()
+    first_call_result = squad.simple_agent()
+    second_call_result = squad.simple_agent()
 
     assert (
         first_call_result is second_call_result
@@ -26,9 +26,9 @@ def test_agent_memoization():
 
 
 def test_task_memoization():
-    crew = SimpleCrew()
-    first_call_result = crew.simple_task()
-    second_call_result = crew.simple_task()
+    squad = SimpleSquad()
+    first_call_result = squad.simple_task()
+    second_call_result = squad.simple_task()
 
     assert (
         first_call_result is second_call_result

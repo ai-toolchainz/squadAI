@@ -1,20 +1,20 @@
 ---
-title: crewAI Tasks
-description: Detailed guide on managing and creating tasks within the crewAI framework, reflecting the latest codebase updates.
+title: squadAI Tasks
+description: Detailed guide on managing and creating tasks within the squadAI framework, reflecting the latest codebase updates.
 ---
 
 ## Overview of a Task
 !!! note "What is a Task?"
-    In the crewAI framework, tasks are specific assignments completed by agents. They provide all necessary details for execution, such as a description, the agent responsible, required tools, and more, facilitating a wide range of action complexities.
+    In the squadAI framework, tasks are specific assignments completed by agents. They provide all necessary details for execution, such as a description, the agent responsible, required tools, and more, facilitating a wide range of action complexities.
 
-Tasks within crewAI can be collaborative, requiring multiple agents to work together. This is managed through the task properties and orchestrated by the Crew's process, enhancing teamwork and efficiency.
+Tasks within squadAI can be collaborative, requiring multiple agents to work together. This is managed through the task properties and orchestrated by the Squad's process, enhancing teamwork and efficiency.
 
 ## Task Attributes
 
 | Attribute              | Description                                                                                   |
 | :----------------------| :-------------------------------------------------------------------------------------------- |
 | **Description**        | A clear, concise statement of what the task entails.                                          |
-| **Agent**              | The agent responsible for the task, assigned either directly or by the crew's process.        |
+| **Agent**              | The agent responsible for the task, assigned either directly or by the squad's process.        |
 | **Expected Output**    | A detailed description of what the task's completion looks like.                              |
 | **Tools** *(optional)* | The functions or capabilities the agent can utilize to perform the task.                      |
 | **Async Execution** *(optional)* | If set, the task executes asynchronously, allowing progression without waiting for completion.|
@@ -31,7 +31,7 @@ Tasks within crewAI can be collaborative, requiring multiple agents to work toge
 Creating a task involves defining its scope, responsible agent, and any additional attributes for flexibility:
 
 ```python
-from crewai import Task
+from squadai import Task
 
 task = Task(
     description='Find and summarize the latest and most relevant news on AI',
@@ -40,11 +40,11 @@ task = Task(
 ```
 
 !!! note "Task Assignment"
-    Directly specify an `agent` for assignment or let the `hierarchical` CrewAI's process decide based on roles, availability, etc.
+    Directly specify an `agent` for assignment or let the `hierarchical` SquadAI's process decide based on roles, availability, etc.
 
 ## Integrating Tools with Tasks
 
-Leverage tools from the [crewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
+Leverage tools from the [squadAI Toolkit](https://github.com/joaomdmoura/squadai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
 
 ## Creating a Task with Tools
 
@@ -53,8 +53,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "Your Key"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from squadai import Agent, Task, Squad
+from squadai_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',
@@ -74,13 +74,13 @@ task = Task(
   tools=[search_tool]
 )
 
-crew = Crew(
+squad = Squad(
     agents=[research_agent],
     tasks=[task],
     verbose=2
 )
 
-result = crew.kickoff()
+result = squad.kickoff()
 print(result)
 ```
 
@@ -88,7 +88,7 @@ This demonstrates how tasks with specific tools can override an agent's default 
 
 ## Referring to Other Tasks
 
-In crewAI, the output of one task is automatically relayed into the next one, but you can specifically define what tasks' output, including multiple should be used as context for another task.
+In squadAI, the output of one task is automatically relayed into the next one, but you can specifically define what tasks' output, including multiple should be used as context for another task.
 
 This is useful when you have a task that depends on the output of another task that is not performed immediately after it. This is done through the `context` attribute of the task:
 
@@ -123,7 +123,7 @@ write_blog_task = Task(
 
 ## Asynchronous Execution
 
-You can define a task to be executed asynchronously. This means that the crew will not wait for it to be completed to continue with the next task. This is useful for tasks that take a long time to be completed, or that are not crucial for the next tasks to be performed.
+You can define a task to be executed asynchronously. This means that the squad will not wait for it to be completed to continue with the next task. This is useful for tasks that take a long time to be completed, or that are not crucial for the next tasks to be performed.
 
 You can then use the `context` attribute to define in a future task that it should wait for the output of the asynchronous task to be completed.
 
@@ -183,7 +183,7 @@ research_task = Task(
 
 ## Accessing a Specific Task Output
 
-Once a crew finishes running, you can access the output of a specific task by using the `output` attribute of the task object:
+Once a squad finishes running, you can access the output of a specific task by using the `output` attribute of the task object:
 
 ```python
 # ...
@@ -196,13 +196,13 @@ task1 = Task(
 
 #...
 
-crew = Crew(
+squad = Squad(
     agents=[research_agent],
     tasks=[task1, task2, task3],
     verbose=2
 )
 
-result = crew.kickoff()
+result = squad.kickoff()
 
 # Returns a TaskOutput object with the description and results of the task
 print(f"""
@@ -214,7 +214,7 @@ print(f"""
 
 ## Tool Override Mechanism
 
-Specifying tools in a task allows for dynamic adaptation of agent capabilities, emphasizing CrewAI's flexibility.
+Specifying tools in a task allows for dynamic adaptation of agent capabilities, emphasizing SquadAI's flexibility.
 
 ## Error Handling and Validation Mechanisms
 
@@ -223,8 +223,8 @@ While creating and executing tasks, certain validation mechanisms are in place t
 - Ensuring only one output type is set per task to maintain clear output expectations.
 - Preventing the manual assignment of the `id` attribute to uphold the integrity of the unique identifier system.
 
-These validations help in maintaining the consistency and reliability of task executions within the crewAI framework.
+These validations help in maintaining the consistency and reliability of task executions within the squadAI framework.
 
 ## Conclusion
 
-Tasks are the driving force behind the actions of agents in crewAI. By properly defining tasks and their outcomes, you set the stage for your AI agents to work effectively, either independently or as a collaborative unit. Equipping tasks with appropriate tools, understanding the execution process, and following robust validation practices are crucial for maximizing CrewAI's potential, ensuring agents are effectively prepared for their assignments and that tasks are executed as intended.
+Tasks are the driving force behind the actions of agents in squadAI. By properly defining tasks and their outcomes, you set the stage for your AI agents to work effectively, either independently or as a collaborative unit. Equipping tasks with appropriate tools, understanding the execution process, and following robust validation practices are crucial for maximizing SquadAI's potential, ensuring agents are effectively prepared for their assignments and that tasks are executed as intended.

@@ -7,17 +7,17 @@
 The DOCXSearchTool is a RAG tool designed for semantic searching within DOCX documents. It enables users to effectively search and extract relevant information from DOCX files using query-based searches. This tool is invaluable for data analysis, information management, and research tasks, streamlining the process of finding specific information within large document collections.
 
 ## Installation
-Install the crewai_tools package by running the following command in your terminal:
+Install the squadai_tools package by running the following command in your terminal:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'squadai[tools]'
 ```
 
 ## Example
 The following example demonstrates initializing the DOCXSearchTool to search within any DOCX file's content or with a specific DOCX file path.
 
 ```python
-from crewai_tools import DOCXSearchTool
+from squadai_tools import DOCXSearchTool
 
 # Initialize the tool to search within any DOCX file's content
 tool = DOCXSearchTool()
