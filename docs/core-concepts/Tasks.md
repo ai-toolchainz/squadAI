@@ -44,7 +44,7 @@ task = Task(
 
 ## Integrating Tools with Tasks
 
-Leverage tools from the [squadAI Toolkit](https://github.com/joaomdmoura/squadai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
+Leverage tools from the [squadAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
 
 ## Creating a Task with Tools
 
